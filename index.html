@@ -56,7 +56,11 @@
         <!-- Hero -->
         <section class="section hero">
             <h1 class="hero-tittle">Ефективні рішення для вашого бізнесу</h1>
-            <button class="hero-button pointer" type="button">Замовити послугу</button>
+            <button class="hero-button pointer" type="button" data-modal-open>Замовити послугу</button>
+            <div class="backdrop is-hidden"data-modal>
+                <div class="modal">  
+                <button class="close" data-modal-close><svg class="icon" width="11" height="11"><use href="./images/icons.svg#icon-Vector"></use> </svg></button></div>
+            </div>
         </section>
         <!-- Benefits -->
         <section class="section benefits">
@@ -116,7 +120,7 @@
                 <ul class="specialization-list">
                     <li class="item">
                         <a href=""><img src="./images/box1.jpg" alt="десктопні додатки" width="370"></a>
-                        <div class="desktop">ДЕСКОПНІ ДОДАТКИ</div>
+                        <div class="desktop">ДЕСКТОПНІ ДОДАТКИ</div>
                     </li>
                     <li class="item">
                         <a href=""><img src="./images/box2.jpg" alt="мобільні додатки" width="370"></a><div class="desktop">МОБІЛЬНІ ДОДАТКИ</div>
@@ -376,6 +380,7 @@
         </div>
     </div>
 </footer>
+<script src="./js/modal.js"></script>
 </body>
 
 </html>
