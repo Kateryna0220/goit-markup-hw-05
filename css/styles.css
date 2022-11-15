@@ -344,6 +344,9 @@ margin-bottom: 30px;
     justify-content: center;
     border-radius: 50%;
     color: var(--color-social);
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
     
 }
 
@@ -393,7 +396,7 @@ margin-bottom: 30px;
 }
 
 .clients-list .link:hover,
-.clients-list .linkfocus {
+.clients-list .link:focus {
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
 }
@@ -512,6 +515,9 @@ footer .footer-list {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+    transition-property: color, background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .list-buttons .item {
@@ -561,6 +567,9 @@ footer .footer-list {
 
 .content-link {
     display: block;
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: var(--timing-function);
 }
 
 .content-link:hover,
@@ -617,33 +626,42 @@ align-items: baseline;
         border-top: 0;}
 
 /*Портфоліо ховерний текст*/
-.project-list .item {
+.project-list .img-wrapper {
     position: relative;
+    overflow: hidden;
 }
 .description{
     position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    bottom: 95px;
-    font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: calc(28 / 18);
-    background-color: rgba(33, 150, 243, 0.9);
-    color: var(--color-white);
-    letter-spacing: 0.03em;
+    display: flex;
 align-items: center;
+justify-content: center;
+top: 0;
+left: 0;
+bottom: 95px;
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: calc(28 / 18);
+background-color: rgba(33, 150, 243, 0.9);
+color: var(--color-white);
+letter-spacing: 0.03em;
 padding-top: 63px;
 padding-right: 24px;
-padding-top: 63px;
+padding-bottom: 63px;
 padding-left: 24px;
-opacity: 0;
+transform: translateY(100%);
+
 }
 .project-list .item:hover .description,
 .project-list .item:focus .description
 {
-    opacity: 1;
+transform: translateY(0);
+}
+.project-list .item{
+transition-property: opacity;
+transition-duration: 250ms;
+transition-timing-function: var(--timing-function);
+cursor: pointer;
 }
 /*хтмл текст чим ми займаємось*/
 .specialization-list .item {
@@ -651,7 +669,9 @@ opacity: 0;
 }
 .desktop{
     position: absolute;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     bottom: 4px;
     width: 370px;
     height: 70px;
@@ -664,10 +684,7 @@ opacity: 0;
         letter-spacing: 0.03em;
         text-transform: uppercase;
         color: var(--color-white);
-    padding-top: 27px;
-    padding-right: 107px;
-    padding-bottom: 27px;
-    padding-left: 107px;
+
 }
 /*модальне вікно*/
 .backdrop{
@@ -681,6 +698,7 @@ opacity: 0;
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 .modal {
     position: absolute;
